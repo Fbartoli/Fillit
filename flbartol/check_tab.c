@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   check_tab.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: flbartol <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: flbartol <flbartol@42.student.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/21 11:34:10 by flbartol          #+#    #+#             */
-/*   Updated: 2018/12/21 16:42:12 by flbartol         ###   ########.fr       */
+/*   Updated: 2018/12/22 16:47:08 by flbartol         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,25 +14,36 @@
 #include <stdio.h>
 
 static int		check_cell(char **cell, int x, int y)
-{	
+{
 	if (cell[y][x] == '.')
+	{
+		printf("%c\n", cell[y][x]);
 		return (0);
+	}
 	else if (y == 0 && x == 0 && cell[y][x] == '#' && (cell[y][x + 1] == '#'
 		|| cell[y + 1][x] == '#'))
+		{
+		printf("%c\n", cell[y][x]);
 		return (0);
+		}
 	else if (y == 3 && x == 0 && cell[y][x] == '#' && (cell[y][x + 1] == '#'
 		|| cell[y - 1][x] == '#'))
+		{
+		printf("%c\n", cell[y][x]);
 		return (0);
+		}
 	else if (y == 0 && cell[y][x] == '#' && (cell[y][x + 1] == '#'
-		|| cell[y + 1][x] == '#'|| cell[x - 1][x] == '#'))
+		|| cell[y + 1][x] == '#' || cell[y][x - 1] == '#'))
+		{
 		return (0);
+		}
 	else if (y == 3 && cell[y][x] == '#' && (cell[y][x + 1] == '#'
 		|| cell[y - 1][x] == '#'|| cell[x - 1][x] == '#'))
 		return (0);
 	else if (x == 0 && cell[y][x] == '#' && (cell[y][x + 1] == '#'
 		|| cell[y + 1][x] == '#'|| cell[y - 1][x] == '#'))
 		return (0);
-	else if (cell[y][x] == '#' && (cell[y][x + 1] == '#'
+	else if (y != 3 && y != 0 && cell[y][x] == '#' && (cell[y][x + 1] == '#'
 		|| cell[y + 1][x] == '#'|| cell[x - 1][x] == '#'
 		|| cell[y - 1][x] == '#'))
 		return (0);
@@ -43,7 +54,6 @@ static int		check_tetris(char **tetris)
 {
 	int x;
 	int y;
-	int i = 0;
 
 	y = 0;
 	while (tetris[y])
@@ -54,8 +64,6 @@ static int		check_tetris(char **tetris)
 			if (check_cell(tetris, x, y) == -1)
 				return (-1);
 			x++;
-			i++;
-			printf("%d\n", i);
 		}
 		if (x != 4)
 			return (-1);
