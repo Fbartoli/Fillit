@@ -6,7 +6,7 @@
 /*   By: flbartol <flbartol@42.student.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/21 11:34:10 by flbartol          #+#    #+#             */
-/*   Updated: 2018/12/22 23:47:13 by flbartol         ###   ########.fr       */
+/*   Updated: 2018/12/23 00:00:03 by flbartol         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,7 +77,7 @@ int		check_tab(char ***tab)
 			return (-1);
 		t++;
 	}
-	if (t > 25)
+	if (t > 26)
 		return (-1);
 	return (0);
 }

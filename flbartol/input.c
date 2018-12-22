@@ -6,7 +6,7 @@
 /*   By: flbartol <flbartol@42.student.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/21 11:07:38 by ftrujill          #+#    #+#             */
-/*   Updated: 2018/12/22 23:39:44 by flbartol         ###   ########.fr       */
+/*   Updated: 2018/12/22 23:59:42 by flbartol         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,19 +76,10 @@ int			main(int argc, char **argv)
 	if (argc != 2)
 		return (print_usage());
 	if ((fd = open(argv[1], O_RDONLY)) == -1
-		|| !(tetris = (char***)malloc(26 * sizeof(char **)))
+		|| !(tetris = (char***)malloc(27 * sizeof(char **)))
 		|| input_to_tetris(fd, tetris) == 0)
 		return (print_error());
 	printf("Stocked\n");
-
-	for(size_t t = 0; t < 25; t++)
-	{
-
-		for(size_t y = 0; y < 5; y++)
-		{
-			printf("%s\n", tetris[t][y]);	/* code */
-		}
-	}
 	if (check_tab(tetris) == -1)
 		return(print_error());
 	return(0);
