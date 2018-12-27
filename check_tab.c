@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   check_tab.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: flbartol <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: flbartol <flbartol@42.student.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/21 11:34:10 by flbartol          #+#    #+#             */
-/*   Updated: 2018/12/27 20:12:00 by flbartol         ###   ########.fr       */
+/*   Updated: 2018/12/27 23:21:30 by flbartol         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,8 @@
 #include <stdio.h>
 
 static int		check_cell(char cell[5][5], int x, int y)
-{	
+{
+	printf("x:%d,y:%d \n", x, y);
 	if (cell[y][x] == '.')
 		return (0);
 	else if (y == 0 && x == 0 && cell[y][x] == '#' && (cell[y][x + 1] == '#'
@@ -27,9 +28,12 @@ static int		check_cell(char cell[5][5], int x, int y)
 		|| cell[y + 1][x] == '#'|| cell[y - 1][x] == '#'))
 		return (0);
 	else if (y == 3 && cell[y][x] == '#' && (cell[y][x + 1] == '#'
-		|| cell[y - 1][x] == '#'|| cell[y - 1][x] == '#'))
+		|| cell[y - 1][x] == '#'|| cell[y][x - 1] == '#'))
 		return (0);
 	else if (x == 0 && cell[y][x] == '#' && (cell[y][x + 1] == '#'
+		|| cell[y + 1][x] == '#'|| cell[y - 1][x] == '#'))
+		return (0);
+else if (x == 3 && cell[y][x] == '#' && (cell[y][x - 1] == '#'
 		|| cell[y + 1][x] == '#'|| cell[y - 1][x] == '#'))
 		return (0);
 	else if (cell[y][x] == '#' && (cell[y][x + 1] == '#'
@@ -60,6 +64,7 @@ static int		check_piece(char piece[5][5])
 		}
 		if (x != 4)
 			return (-1);
+		printf("\n");
 		y++;
 	}
 	if (i != 4)
@@ -73,6 +78,7 @@ int		check_tetris(t_etris tetris[27])
 	t = 0;
 	while (tetris[t].piece[0][0])
 	{
+		printf("\n");
 		if (check_piece(tetris[t].piece) == 0)
 			t++;
 		else
