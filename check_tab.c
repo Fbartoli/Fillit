@@ -6,7 +6,7 @@
 /*   By: flbartol <flbartol@42.student.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/21 11:34:10 by flbartol          #+#    #+#             */
-/*   Updated: 2018/12/27 23:21:30 by flbartol         ###   ########.fr       */
+/*   Updated: 2018/12/27 23:27:05 by flbartol         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ static int		check_cell(char cell[5][5], int x, int y)
 	else if (x == 0 && cell[y][x] == '#' && (cell[y][x + 1] == '#'
 		|| cell[y + 1][x] == '#'|| cell[y - 1][x] == '#'))
 		return (0);
-else if (x == 3 && cell[y][x] == '#' && (cell[y][x - 1] == '#'
+	else if (x == 3 && cell[y][x] == '#' && (cell[y][x - 1] == '#'
 		|| cell[y + 1][x] == '#'|| cell[y - 1][x] == '#'))
 		return (0);
 	else if (cell[y][x] == '#' && (cell[y][x + 1] == '#'
