@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   aux.c                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ftrujill <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: flbartol <flbartol@42.student.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/27 12:18:22 by ftrujill          #+#    #+#             */
-/*   Updated: 2018/12/27 21:52:09 by ftrujill         ###   ########.fr       */
+/*   Updated: 2018/12/28 00:53:52 by flbartol         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,13 +54,15 @@ void        piece_coords(t_etris *tetris, int col, int row)
 		{
 			if (tetris->piece[i + row][j + col] == '#')
 			{
-				tetris->xy[k][0] = i;
-				tetris->xy[k++][1] = j;
+				tetris->xy[k][0] = i - tetris->xy[0][0];
+				tetris->xy[k++][1] = j - tetris->xy[0][1];
 			}
 			j++;
 		}
 		i++;
-	}			
+	}
+	tetris->xy[0][0] = 0;
+	tetris->xy[0][1] = 0;
 }
 
 void   		canonic_position(t_etris *tetris)
