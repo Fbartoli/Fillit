@@ -6,11 +6,10 @@
 /*   By: flbartol <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/27 15:41:15 by flbartol          #+#    #+#             */
-/*   Updated: 2018/12/27 20:12:02 by flbartol         ###   ########.fr       */
+/*   Updated: 2018/12/27 21:51:19 by ftrujill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "./libft/libft.h"
 #include "fillit.h"
 
 int			main(int argc, char **argv)
@@ -28,11 +27,9 @@ int			main(int argc, char **argv)
 	if (check_tetris(tetris) == -1)
 		return (print_error());
 	print_tetris(tetris);
-//	canonic_form(tetris);
-	//write(1, "newline\n", 8);
-	//print_tetris_position(tetris);
-//	write(1, "newline\n", 8);
+	canonic_form(tetris);
+	write(1, "Modified tetris\n", 16);
+	print_detailed_tetris(tetris);
 //	init_map(map);
-	//free_tetris(tetris, 26, 4);
 	return (0);
 }

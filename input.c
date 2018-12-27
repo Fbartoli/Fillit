@@ -6,29 +6,11 @@
 /*   By: ftrujill <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/21 11:07:38 by ftrujill          #+#    #+#             */
-/*   Updated: 2018/12/27 20:01:36 by flbartol         ###   ########.fr       */
+/*   Updated: 2018/12/27 21:51:09 by ftrujill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fillit.h"
-#include "./libft/libft.h"
-
-int			free_tetris(char ***tetris, int i, int j)
-{
-	int k;
-	int l;
-
-	k = 0;
-	while (k <= i && tetris[k])
-	{
-		l = 0;
-		while (l < (k == i ? j : 4))
-			free((tetris[k])[l++]);
-		free (tetris[k++]);
-	}
-	free(tetris);
-	return (0);
-}
 
 int			input_to_tetris(int fd, t_etris tetris[27])
 {

@@ -6,7 +6,7 @@
 /*   By: ftrujill <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/21 11:08:14 by ftrujill          #+#    #+#             */
-/*   Updated: 2018/12/27 20:11:56 by flbartol         ###   ########.fr       */
+/*   Updated: 2018/12/27 21:50:39 by ftrujill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,13 +33,12 @@ typedef struct s_point
 
 int			print_error(void);
 int			print_usage(void);
-void        print_line_position(char *str);
 void		print_tetris(t_etris tetris[27]);
+void        print_detailed_tetris(t_etris tetris[27]);
 int			input_to_tetris(int fd, t_etris tetris[27]);
 int			check_tetris(t_etris tetris[27]);
 int			relative_position(char ***tetris);
+int			init_map(char map[16][16]);
+void        canonic_form(t_etris tetris[27]);
 
-int		init_map(char map[16][16]);
-void        canonic_form(char ***tetris);
-void        print_tetris_position(char ***tetris);
 #endif
