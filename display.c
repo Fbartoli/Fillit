@@ -6,7 +6,7 @@
 /*	 By: ftrujill <marvin@42.fr>					+#+	 +:+	   +#+		  */
 /*												  +#+#+#+#+#+	+#+			  */
 /*	 Created: 2018/12/27 12:16:39 by ftrujill		   #+#	  #+#			  */
-/*   Updated: 2018/12/27 21:52:18 by ftrujill         ###   ########.fr       */
+/*   Updated: 2018/12/28 13:14:07 by ftrujill         ###   ########.fr       */
 /*																			  */
 /* ************************************************************************** */
 
@@ -69,4 +69,16 @@ void        print_detailed_tetris(t_etris tetris[27])
         if (tetris[i].piece[0][0])
             ft_putchar('\n');
     }
+}
+
+void		print_map(char map[16][16], int size)
+{
+	int i;
+
+	i = 0;
+	while (i < size)
+	{
+		ft_putnstr(map[i++], size);
+		ft_putchar('\n');
+	}
 }
