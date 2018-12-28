@@ -6,7 +6,7 @@
 /*   By: flbartol <flbartol@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/27 12:18:22 by ftrujill          #+#    #+#             */
-/*   Updated: 2018/12/28 12:52:19 by flbartol         ###   ########.fr       */
+/*   Updated: 2018/12/28 13:33:45 by ftrujill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -97,5 +97,8 @@ void		canonic_form(t_etris tetris[27])
 
 	i = 0;
 	while (tetris[i].piece[0][0])
+	{
+		tetris[i].lettre = 'A' + i;
 		canonic_position(&(tetris[i++]));
+	}
 }
