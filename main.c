@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: flbartol <flbartol@42.student.fr>          +#+  +:+       +#+        */
+/*   By: flbartol <flbartol@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/27 15:41:15 by flbartol          #+#    #+#             */
-/*   Updated: 2018/12/28 01:39:32 by flbartol         ###   ########.fr       */
+/*   Updated: 2018/12/28 12:26:14 by flbartol         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,9 +35,9 @@ int			main(int argc, char **argv)
 	init_map(map);
 	printf("map done\n");
 	t = 0;
-	while (fill_map(tetris, map, 0, 0) == 0)
-		t++;
-	i = 0;
+	//while (fill_map(tetris, map, 0, 0) == 0)
+	//	t++;
+	//i = 0;
 //	while (i < 17)
 		//printf("%s\n", map[i]);
 	return (0);
