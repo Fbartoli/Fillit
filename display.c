@@ -71,14 +71,14 @@ void        print_detailed_tetris(t_etris tetris[27])
     }
 }
 
-void		print_map(char map[16][16], int size)
+void		print_map(t_map *map)
 {
 	int i;
 
 	i = 0;
-	while (i < size)
+	while (i < map->size_map)
 	{
-		ft_putnstr(map[i++], size);
+		ft_putnstr(map->map[i++], map->size_map);
 		ft_putchar('\n');
 	}
 }

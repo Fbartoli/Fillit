@@ -6,7 +6,7 @@
 /*   By: flbartol <flbartol@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/27 12:18:22 by ftrujill          #+#    #+#             */
-/*   Updated: 2018/12/28 13:33:45 by ftrujill         ###   ########.fr       */
+/*   Updated: 2018/12/28 14:17:26 by flbartol         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,7 +91,7 @@ void   		canonic_position(t_etris *tetris)
 	canonic_piece(tetris, col, row);
 }
 
-void		canonic_form(t_etris tetris[27])
+void		canonic_form(t_etris tetris[27], t_map *map)
 {
 	int i;
 
@@ -101,4 +101,5 @@ void		canonic_form(t_etris tetris[27])
 		tetris[i].lettre = 'A' + i;
 		canonic_position(&(tetris[i++]));
 	}
+	map->nb_tot_tetris = i;
 }
