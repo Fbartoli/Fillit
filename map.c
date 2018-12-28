@@ -6,7 +6,7 @@
 /*   By: flbartol <flbartol@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/27 15:47:52 by flbartol          #+#    #+#             */
-/*   Updated: 2018/12/28 14:22:25 by flbartol         ###   ########.fr       */
+/*   Updated: 2018/12/28 15:49:15 by flbartol         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,15 +67,15 @@ int		put_in_map(t_etris *tetris, t_map *map)
 	return (0);
 }
 
-int		delete_tetris(t_etris *tetris, t_map *map)
+int		delete_tetris(t_etris *tetris, t_map *map, int t)
 {
 	int i;
 	int x;
 	int y;
 
 	i = 0;
-	x = map->current_xy[0];
-	y = map->current_xy[1];
+	x = map->position_piece[t][0];
+	y = map->position_piece[t][1];
 	while(i < 4)
 	{
 		map->map[x + tetris->xy[i][0]][y + tetris->xy[i][1]] = '.';
