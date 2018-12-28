@@ -6,7 +6,7 @@
 /*   By: flbartol <flbartol@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/21 11:08:14 by ftrujill          #+#    #+#             */
-/*   Updated: 2018/12/28 11:20:01 by flbartol         ###   ########.fr       */
+/*   Updated: 2018/12/28 13:02:47 by flbartol         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ typedef struct s_point
 	int 		xy[4][2];
 	int			width;
 	int			length;
-
+	char 		lettre;
 } 				t_etris;
 
 int			print_error(void);
@@ -40,6 +40,10 @@ int			check_tetris(t_etris tetris[27]);
 int			relative_position(char ***tetris);
 int			init_map(char map[16][16]);
 void        canonic_form(t_etris tetris[27]);
-int			fill_map(t_etris tetris[27], char map[16][16], int x, int y);
+int			is_available_map(t_etris *tetris, char map[16][16], int x, int y);
 
 #endif
+
+/*put_piece(tetris[t]);			*/
+/*	t = x;				*/
+/*	map[y][x] = t_etris[t].lettre	*/

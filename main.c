@@ -6,7 +6,7 @@
 /*   By: flbartol <flbartol@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/27 15:41:15 by flbartol          #+#    #+#             */
-/*   Updated: 2018/12/28 12:26:14 by flbartol         ###   ########.fr       */
+/*   Updated: 2018/12/28 13:10:01 by flbartol         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,7 @@ int			main(int argc, char **argv)
 	int		fd;
 	t_etris	tetris[27];
 	char	map[16][16];
-	int		t;
-	int i;
+	int 	i;
 
 	if (argc != 2)
 		return (print_usage());
@@ -34,11 +33,12 @@ int			main(int argc, char **argv)
 	print_detailed_tetris(tetris);
 	init_map(map);
 	printf("map done\n");
-	t = 0;
-	//while (fill_map(tetris, map, 0, 0) == 0)
-	//	t++;
-	//i = 0;
-//	while (i < 17)
-		//printf("%s\n", map[i]);
+	
+	for(size_t t = 0; tetris[t].piece[0][0] != 0; t++)
+	{
+	is_available_map(&(tetris[t]), map, 0, 0);
+	}
+	
+	
 	return (0);
 }

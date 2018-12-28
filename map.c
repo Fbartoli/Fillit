@@ -6,7 +6,7 @@
 /*   By: flbartol <flbartol@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/27 15:47:52 by flbartol          #+#    #+#             */
-/*   Updated: 2018/12/28 12:52:18 by flbartol         ###   ########.fr       */
+/*   Updated: 2018/12/28 13:08:16 by flbartol         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,16 +33,13 @@ int		init_map(char map[16][16])
 
 int		is_available_map(t_etris *tetris, char map[16][16], int x, int y)
 {
-	int t;
 	int i;
 
-	printf("%d%d\n", x, y);
 	i = 0;
-	t = 0;
-	if (map[y][x] != '.')
-		is_available_map(*tetris, map, x + tetris->xy[i++]);
-	else (fill_map )
-	map[y][x] = '#';
-	i++;
+	while((map[x + tetris->xy[i][0]][y + tetris->xy[i][1]]) == '.' && i < 4)
+		i++;
+	if (i != 4)
+		return (-1);
+	printf("%d\n", i);
 	return (0);
 }
