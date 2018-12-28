@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: flbartol <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: flbartol <flbartol@42.student.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/27 15:41:15 by flbartol          #+#    #+#             */
-/*   Updated: 2018/12/27 21:51:19 by ftrujill         ###   ########.fr       */
+/*   Updated: 2018/12/28 01:39:32 by flbartol         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ int			main(int argc, char **argv)
 	int		fd;
 	t_etris	tetris[27];
 	char	map[16][16];
+	int		t;
+	int i;
 
 	if (argc != 2)
 		return (print_usage());
@@ -30,6 +32,13 @@ int			main(int argc, char **argv)
 	canonic_form(tetris);
 	write(1, "Modified tetris\n", 16);
 	print_detailed_tetris(tetris);
-//	init_map(map);
+	init_map(map);
+	printf("map done\n");
+	t = 0;
+	while (fill_map(tetris, map, 0, 0) == 0)
+		t++;
+	i = 0;
+//	while (i < 17)
+		//printf("%s\n", map[i]);
 	return (0);
 }
