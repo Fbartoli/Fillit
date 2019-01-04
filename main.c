@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: flbartol <flbartol@student.42.fr>          +#+  +:+       +#+        */
+/*   By: flbartol <flbartol@42.student.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/27 15:41:15 by flbartol          #+#    #+#             */
-/*   Updated: 2018/12/28 14:29:27 by flbartol         ###   ########.fr       */
+/*   Updated: 2019/01/04 12:33:11 by flbartol         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ int			main(int argc, char **argv)
 	int k;
 	int t = 0;
 
-	map.size_map = 16;
+	map.size_map = 4;
 	if (argc != 2)
 		return (print_usage());
 	if ((fd = open(argv[1], O_RDONLY)) == -1
@@ -37,13 +37,7 @@ int			main(int argc, char **argv)
 	init_map(&map);
 	print_map(&map);
 	printf("map done\n");
-	k = 0;
-	while (tetris[t].piece[0][0] != 0)
-	{
-		if (is_available_map(&(tetris[t]), &map) == 0 && map.current_xy[0] < 16)
-			put_in_map(&(tetris[t++]), &map);
-		map.current_xy[0] += 1; 
-	}
-	print_map(&map);
+	if (solver(tetris, &map)== -1)
+		return(print_error());
 	return (0);
 }
