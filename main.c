@@ -6,7 +6,7 @@
 /*   By: flbartol <flbartol@42.student.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/27 15:41:15 by flbartol          #+#    #+#             */
-/*   Updated: 2019/01/04 12:33:11 by flbartol         ###   ########.fr       */
+/*   Updated: 2019/01/04 12:57:18 by flbartol         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,5 +39,6 @@ int			main(int argc, char **argv)
 	printf("map done\n");
 	if (solver(tetris, &map)== -1)
 		return(print_error());
+	print_map(&map);
 	return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: flbartol <flbartol@42.student.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/27 15:47:52 by flbartol          #+#    #+#             */
-/*   Updated: 2019/01/04 11:11:05 by flbartol         ###   ########.fr       */
+/*   Updated: 2019/01/04 12:58:37 by flbartol         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,6 @@ int		is_available_map(t_etris *tetris, t_map *map)
 		i++;
 	if (i != 4)
 		return (-1);
-	printf("%d\n", i);
 	return (0);
 }
 

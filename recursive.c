@@ -6,7 +6,7 @@
 /*   By: flbartol <flbartol@42.student.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/28 14:30:58 by flbartol          #+#    #+#             */
-/*   Updated: 2019/01/04 12:40:24 by flbartol         ###   ########.fr       */
+/*   Updated: 2019/01/04 12:56:07 by flbartol         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,9 +52,6 @@ int		solver(t_etris tetris[27], t_map *map)
 			map->current_xy[0] = 0;
 			map->current_xy[1] = 0;
 		}
-		printf("\n");
-		print_map(map);
-		printf("y :%d , x: %d, t: %d\n width: %d, size: %d\n ", map->current_xy[0], map->current_xy[1], *t, tetris[*t].width, map->size_map);
 	}
 	return (0);
 }
