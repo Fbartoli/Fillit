@@ -6,7 +6,7 @@
 /*   By: flbartol <flbartol@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/21 11:08:14 by ftrujill          #+#    #+#             */
-/*   Updated: 2019/01/05 14:52:01 by flbartol         ###   ########.fr       */
+/*   Updated: 2019/01/05 17:22:26 by flbartol         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,7 @@ typedef struct s_map
 	int			nb_piece_placed;
 	int			position_piece[26][2];
 	int			size_map;
+	char		map_final[16][16];
 } 				t_map;
 
 int			print_error(void);
