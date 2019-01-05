@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: flbartol <flbartol@42.student.fr>          +#+  +:+       +#+        */
+/*   By: flbartol <flbartol@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/27 15:41:15 by flbartol          #+#    #+#             */
-/*   Updated: 2019/01/04 12:57:18 by flbartol         ###   ########.fr       */
+/*   Updated: 2019/01/05 12:21:56 by flbartol         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,6 @@ int			main(int argc, char **argv)
 	write(1, "Modified tetris\n", 16);
 	print_detailed_tetris(tetris);
 	init_map(&map);
-	print_map(&map);
 	printf("map done\n");
 	if (solver(tetris, &map)== -1)
 		return(print_error());

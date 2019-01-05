@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   check_tab.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: flbartol <flbartol@42.student.fr>          +#+  +:+       +#+        */
+/*   By: flbartol <flbartol@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/21 11:34:10 by flbartol          #+#    #+#             */
-/*   Updated: 2018/12/28 00:55:21 by flbartol         ###   ########.fr       */
+/*   Updated: 2019/01/05 12:33:45 by flbartol         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 static int		check_cell(char cell[5][5], int x, int y)
 {
+	printf("y: %d , x: %d\n", y, x);
 	if (cell[y][x] == '.')
 		return (0);
 	else if (y == 0 && x == 0 && cell[y][x] == '#' && (cell[y][x + 1] == '#'
@@ -36,9 +37,10 @@ static int		check_cell(char cell[5][5], int x, int y)
 		|| cell[y + 1][x] == '#'|| cell[y - 1][x] == '#'))
 		return (0);
 	else if (cell[y][x] == '#' && (cell[y][x + 1] == '#'
-		|| cell[y + 1][x] == '#'|| cell[x - 1][x] == '#'
+		|| cell[y + 1][x] == '#'|| cell[y][x - 1] == '#'
 		|| cell[y - 1][x] == '#'))
 		return (0);
+	printf("passage \n");
 	return (-1);
 }
 
@@ -63,7 +65,6 @@ static int		check_piece(char piece[5][5])
 		}
 		if (x != 4)
 			return (-1);
-		printf("\n");
 		y++;
 	}
 	if (i != 4)
@@ -77,7 +78,6 @@ int		check_tetris(t_etris tetris[27])
 	t = 0;
 	while (tetris[t].piece[0][0])
 	{
-		printf("\n");
 		if (check_piece(tetris[t].piece) == 0)
 			t++;
 		else
