@@ -6,7 +6,7 @@
 /*   By: flbartol <flbartol@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/27 15:47:52 by flbartol          #+#    #+#             */
-/*   Updated: 2019/01/05 19:26:04 by ftrujill         ###   ########.fr       */
+/*   Updated: 2019/01/05 19:37:11 by flbartol         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ void	init_size(t_etris tetris[27], t_map *map)
 		l = tetris[i].length == 4 ? l + 1 : l;
 		i++;
 	}
-	map->size_map = (w > 7 || l > 7) ? ft_max(s, 8) : s;
+	map->size_map = (w > 7 || l > 7) ? ft_max_int(s, 8) : s;
 }
 
 int		init_map(t_map *map)

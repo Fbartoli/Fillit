@@ -6,13 +6,13 @@
 /*   By: flbartol <flbartol@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/27 12:18:22 by ftrujill          #+#    #+#             */
-/*   Updated: 2019/01/05 18:39:17 by ftrujill         ###   ########.fr       */
+/*   Updated: 2019/01/05 19:41:17 by flbartol         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fillit.h"
 
-void		canonic_piece(t_etris *tetris, int col, int row)
+static void		canonic_piece(t_etris *tetris, int col, int row)
 {
 	int i;
 	int j;
@@ -39,7 +39,7 @@ void		canonic_piece(t_etris *tetris, int col, int row)
 	}
 }
 
-void		piece_coords(t_etris *tetris, int col, int row)
+static void		piece_coords(t_etris *tetris, int col, int row)
 {
 	int i;
 	int j;
@@ -63,7 +63,7 @@ void		piece_coords(t_etris *tetris, int col, int row)
 	}
 }
 
-void		canonic_position(t_etris *tetris)
+static void		canonic_position(t_etris *tetris)
 {
 	int j;
 	int col;
@@ -92,7 +92,7 @@ void		canonic_position(t_etris *tetris)
 	canonic_piece(tetris, col, row);
 }
 
-void		canonic_form(t_etris tetris[27], t_map *map)
+void			canonic_form(t_etris tetris[27], t_map *map)
 {
 	int i;
 

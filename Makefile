@@ -3,16 +3,16 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: flbartol <flbartol@42.student.fr>          +#+  +:+       +#+         #
+#    By: flbartol <flbartol@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/12/27 12:56:28 by flbartol          #+#    #+#              #
-#    Updated: 2019/01/04 11:18:20 by flbartol         ###   ########.fr        #
+#    Updated: 2019/01/05 19:47:26 by flbartol         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME= fillit
 FLAGS= -Wall -Wextra -Werror
-SRC= check_tab.c display.c input.c aux.c main.c map.c recursive.c
+SRC= check_tab.c display.c input.c aux.c main.c map.c recursive.c utils.c
 
 OBJ := $(SRC:.c=.o)
 SRC := $(SRC)

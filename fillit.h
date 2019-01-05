@@ -6,7 +6,7 @@
 /*   By: flbartol <flbartol@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/21 11:08:14 by ftrujill          #+#    #+#             */
-/*   Updated: 2019/01/05 19:23:54 by ftrujill         ###   ########.fr       */
+/*   Updated: 2019/01/05 19:39:48 by flbartol         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,4 +54,5 @@ void			print_map(t_map *map);
 int				put_in_map(t_etris *tetris, t_map *map);
 int				delete_tetris(t_etris *tetris, t_map *map, int t);
 int				solver(t_etris tetris[27], t_map *map);
+int				ft_sqrt(int nb);
 #endif
