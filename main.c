@@ -6,7 +6,7 @@
 /*   By: flbartol <flbartol@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/27 15:41:15 by flbartol          #+#    #+#             */
-/*   Updated: 2019/01/05 18:00:27 by flbartol         ###   ########.fr       */
+/*   Updated: 2019/01/05 18:58:24 by ftrujill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,8 +28,8 @@ int			main(int argc, char **argv)
 	canonic_form(tetris, &map);
 	init_map(&map);
 	map.size_map = ft_max_int(tetris[0].length, tetris[0].width);
-	if (solver(tetris, &map)== -1)
-		return(print_error());
+	if (solver(tetris, &map) == -1)
+		return (print_error());
 	print_map(&map);
 	return (0);
 }

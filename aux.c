@@ -6,7 +6,7 @@
 /*   By: flbartol <flbartol@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/27 12:18:22 by ftrujill          #+#    #+#             */
-/*   Updated: 2019/01/05 15:22:23 by flbartol         ###   ########.fr       */
+/*   Updated: 2019/01/05 18:39:17 by ftrujill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,35 +19,35 @@ void		canonic_piece(t_etris *tetris, int col, int row)
 
 	i = 0;
 	while (i < tetris->width)
+	{
+		ft_memmove(tetris->piece[i],
+					tetris->piece[i + row] + col, tetris->length);
+		j = 0;
+		while (j < 4 - tetris->length)
 		{
-			ft_memmove(tetris->piece[i],
-					   tetris->piece[i + row] + col, tetris->length);
-			j = 0;
-			while (j < 4 - tetris->length)
-				{
-					tetris->piece[i][tetris->length + j] = '.';
-					j++;
-				}
-			i++;
+			tetris->piece[i][tetris->length + j] = '.';
+			j++;
 		}
+		i++;
+	}
 	while (i < 4)
-		{
-			j = 0;
-			while (j < 4)
-				tetris->piece[i][j++] = '.';
-			i++;
-		}
+	{
+		j = 0;
+		while (j < 4)
+			tetris->piece[i][j++] = '.';
+		i++;
+	}
 }
 
-void        piece_coords(t_etris *tetris, int col, int row)
+void		piece_coords(t_etris *tetris, int col, int row)
 {
-    int i;
-    int j;
-    int k;
+	int i;
+	int j;
+	int k;
 
-    i = 0;
+	i = 0;
 	k = 0;
-    while (i < tetris->width)
+	while (i < tetris->width)
 	{
 		j = 0;
 		while (j < tetris->length)
@@ -63,7 +63,7 @@ void        piece_coords(t_etris *tetris, int col, int row)
 	}
 }
 
-void   		canonic_position(t_etris *tetris)
+void		canonic_position(t_etris *tetris)
 {
 	int j;
 	int col;
@@ -76,16 +76,17 @@ void   		canonic_position(t_etris *tetris)
 	tetris->length = 0;
 	tetris->width = 0;
 	while (j < 4)
+	{
+		if ((ind = ft_index('#', tetris->piece[j])) != 4)
 		{
-			if ((ind = ft_index('#', tetris->piece[j])) != 4)
-				{
-					col = ft_min_int(col, ind);
-					row = ft_min_int(row, j);
-					tetris->length = ft_max_int(tetris->length, ft_index_rev('#', tetris->piece[j]));
-					tetris->width += 1;
-				}
-			j++;
+			col = ft_min_int(col, ind);
+			row = ft_min_int(row, j);
+			tetris->length = ft_max_int(tetris->length,
+										ft_index_rev('#', tetris->piece[j]));
+			tetris->width += 1;
 		}
+		j++;
+	}
 	tetris->length += 1 - col;
 	piece_coords(tetris, col, row);
 	canonic_piece(tetris, col, row);

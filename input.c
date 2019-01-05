@@ -6,7 +6,7 @@
 /*   By: ftrujill <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/21 11:07:38 by ftrujill          #+#    #+#             */
-/*   Updated: 2018/12/27 21:51:09 by ftrujill         ###   ########.fr       */
+/*   Updated: 2019/01/05 18:36:28 by ftrujill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,24 +14,23 @@
 
 int			input_to_tetris(int fd, t_etris tetris[27])
 {
-	int 	i;
+	int		i;
 	int		j;
-	ssize_t	rd;
 	char	buff[5];
 
 	i = 0;
 	while (i != -1)
 	{
 		j = 0;
-        while (j < 4)
+		while (j < 4)
 		{
-			if ((rd = read(fd, buff, 5)) != 5 || buff[4] != '\n')
-				return(-1);
-		buff[4] = 0;
-		ft_memmove(tetris[i].piece[j++], buff, 5);
+			if (read(fd, buff, 5) != 5 || buff[4] != '\n')
+				return (-1);
+			buff[4] = 0;
+			ft_memmove(tetris[i].piece[j++], buff, 5);
 		}
-		ft_memset(tetris[i++].piece[j], 0, 5); 
-		if (!(rd = read(fd, buff, 1)))
+		ft_memset(tetris[i++].piece[j], 0, 5);
+		if (!(read(fd, buff, 1)))
 		{
 			ft_memset(tetris[i].piece, 0, 5);
 			return (1);
@@ -41,4 +40,3 @@ int			input_to_tetris(int fd, t_etris tetris[27])
 	}
 	return (1);
 }
-
