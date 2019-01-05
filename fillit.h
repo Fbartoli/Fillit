@@ -6,7 +6,7 @@
 /*   By: flbartol <flbartol@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/21 11:08:14 by ftrujill          #+#    #+#             */
-/*   Updated: 2019/01/05 18:57:50 by ftrujill         ###   ########.fr       */
+/*   Updated: 2019/01/05 19:23:54 by ftrujill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,6 +47,7 @@ void			print_tetris(t_etris tetris[27]);
 int				input_to_tetris(int fd, t_etris tetris[27]);
 int				check_tetris(t_etris tetris[27]);
 int				init_map(t_map *map);
+void			init_size(t_etris tetris[27], t_map *map);
 void			canonic_form(t_etris tetris[27], t_map *map);
 int				is_available_map(t_etris *tetris, t_map *map);
 void			print_map(t_map *map);

@@ -6,11 +6,32 @@
 /*   By: flbartol <flbartol@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/27 15:47:52 by flbartol          #+#    #+#             */
-/*   Updated: 2019/01/05 18:41:49 by ftrujill         ###   ########.fr       */
+/*   Updated: 2019/01/05 19:26:04 by ftrujill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fillit.h"
+
+void	init_size(t_etris tetris[27], t_map *map)
+{
+	int i;
+	int w;
+	int l;
+	int s;
+
+	i = 0;
+	w = 0;
+	l = 0;
+	s = ft_max_int(tetris[0].length, tetris[0].width);
+	s = ft_max_int(ft_sqrt(4 * map->nb_tot_tetris), s);
+	while (i < map->nb_tot_tetris)
+	{
+		w = tetris[i].width == 4 ? w + 1 : w;
+		l = tetris[i].length == 4 ? l + 1 : l;
+		i++;
+	}
+	map->size_map = (w > 7 || l > 7) ? ft_max(s, 8) : s;
+}
 
 int		init_map(t_map *map)
 {
