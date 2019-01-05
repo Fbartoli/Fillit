@@ -78,7 +78,7 @@ void		print_map(t_map *map)
 	i = 0;
 	while (i < map->size_map)
 	{
-		ft_putnstr(map->map_final[i++], map->size_map);
+		ft_putnstr(map->map[i++], map->size_map);
 		ft_putchar('\n');
 	}
 }

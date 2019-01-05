@@ -6,7 +6,7 @@
 /*   By: flbartol <flbartol@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/28 14:30:58 by flbartol          #+#    #+#             */
-/*   Updated: 2019/01/05 17:38:52 by flbartol         ###   ########.fr       */
+/*   Updated: 2019/01/05 18:00:28 by flbartol         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,12 +34,11 @@ int		solver(t_etris tetris[27], t_map *map)
 			map->current_xy[1] = map->position_piece[*t][1] + 1;
 			if (*t == 0 && tetris[0].length > map->size_map - map->current_xy[1] && tetris[0].width == map->size_map - map->current_xy[0]) 
 			{
-				//if (map->size_map > 15)
-				//	return(-1);
-				//map->size_map += 1;
-				//map->current_xy[0] = 0;
-				//map->current_xy[1] = 0;
-				return(0);
+				if (map->size_map > 15)
+					return(-1);
+				map->size_map += 1;
+				map->current_xy[0] = 0;
+				map->current_xy[1] = 0;
 			}
 		}
 		else if (is_available_map(&(tetris[*t]), map) == -1
@@ -55,13 +54,5 @@ int		solver(t_etris tetris[27], t_map *map)
 			*t += 1;
 		}
 	}
-	for	(int i = 0; i < 16; i++)
-	{
-		ft_memcpy(map->map_final[i], map->map[i], 16);
-	}
-	init_map(map);
-	print_map(map);
-	printf("\n");
-	map->size_map--;
-	return (solver(tetris, map));
+	return (0);
 }
