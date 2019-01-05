@@ -6,7 +6,7 @@
 /*   By: flbartol <flbartol@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/21 11:34:10 by flbartol          #+#    #+#             */
-/*   Updated: 2019/01/05 12:33:45 by flbartol         ###   ########.fr       */
+/*   Updated: 2019/01/05 15:50:10 by flbartol         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,10 +15,7 @@
 
 static int		check_cell(char cell[5][5], int x, int y)
 {
-	printf("y: %d , x: %d\n", y, x);
-	if (cell[y][x] == '.')
-		return (0);
-	else if (y == 0 && x == 0 && cell[y][x] == '#' && (cell[y][x + 1] == '#'
+	if (y == 0 && x == 0 && cell[y][x] == '#' && (cell[y][x + 1] == '#'
 		|| cell[y + 1][x] == '#'))
 		return (0);
 	else if (y == 3 && x == 0 && cell[y][x] == '#' && (cell[y][x + 1] == '#'
@@ -40,7 +37,6 @@ static int		check_cell(char cell[5][5], int x, int y)
 		|| cell[y + 1][x] == '#'|| cell[y][x - 1] == '#'
 		|| cell[y - 1][x] == '#'))
 		return (0);
-	printf("passage \n");
 	return (-1);
 }
 
@@ -58,9 +54,11 @@ static int		check_piece(char piece[5][5])
 		while(piece[y][x] != 0)
 		{
 			if (piece[y][x] == '#')
+			{	
 				i++;
-			if (check_cell(piece, x, y) == -1)
-				return (-1);
+				if (check_cell(piece, x, y) == -1)
+					return (-1);
+			}
 			x++;
 		}
 		if (x != 4)
