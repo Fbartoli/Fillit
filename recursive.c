@@ -6,7 +6,7 @@
 /*   By: flbartol <flbartol@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/28 14:30:58 by flbartol          #+#    #+#             */
-/*   Updated: 2019/01/05 15:19:03 by flbartol         ###   ########.fr       */
+/*   Updated: 2019/01/05 16:55:28 by flbartol         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,13 +20,13 @@ int		solver(t_etris tetris[27], t_map *map)
 	t = &map->nb_piece_placed;
 	while (*t != map->nb_tot_tetris)
 	{
-		
+
 		if (tetris[*t].length > map->size_map - map->current_xy[1])
 		{
 			map->current_xy[0] += 1;
 			map->current_xy[1] = 0;
 		}
-		else if (tetris[*t].width > map->size_map - map->current_xy[0])
+		if (tetris[*t].width > map->size_map - map->current_xy[0])
 		{
 			*t -= 1;
 			delete_tetris(&tetris[*(t)], map, *t);
@@ -53,8 +53,6 @@ int		solver(t_etris tetris[27], t_map *map)
 			map->current_xy[1] = 0;
 			*t += 1;
 		}
-	//print_map(map);
-	//printf("t: %d, size: %d\n, xde0: %d, yde0: %d", *t, map->size_map, map->position_piece[0][1], map->position_piece[0][0]);
 	}
 	return (0);
 }

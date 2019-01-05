@@ -6,7 +6,7 @@
 /*   By: flbartol <flbartol@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/21 11:34:10 by flbartol          #+#    #+#             */
-/*   Updated: 2019/01/05 16:29:32 by ftrujill         ###   ########.fr       */
+/*   Updated: 2019/01/05 16:57:53 by flbartol         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,7 +80,8 @@ int auxf(int x, int y, char cell[5][5])
 
 int conn(int x, int y, char cell[5][5])
 {
-	return (auxf(x - 1, y, cell) + auxf(x + 1, y, cell) + auxf(x, y + 1, cell) + auxf(x, y - 1, cell));
+	return (auxf(x - 1, y, cell) + auxf(x + 1, y, cell) 
+	+ auxf(x, y + 1, cell) + auxf(x, y - 1, cell));
 }
 
 static int      check_piece(char piece[5][5])
