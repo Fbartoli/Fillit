@@ -6,12 +6,11 @@
 /*   By: flbartol <flbartol@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/28 14:30:58 by flbartol          #+#    #+#             */
-/*   Updated: 2019/01/05 19:46:16 by flbartol         ###   ########.fr       */
+/*   Updated: 2019/01/05 20:09:32 by flbartol         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fillit.h"
-#include "./libft/libft.h"
 
 static void		put_and_reset(t_etris *tetris, t_map *map, int *t)
 {
