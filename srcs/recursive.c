@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   recursive.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: flbartol <flbartol@student.42.fr>          +#+  +:+       +#+        */
+/*   By: flbartol <flbartol@42.student.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/28 14:30:58 by flbartol          #+#    #+#             */
-/*   Updated: 2019/01/05 20:09:32 by flbartol         ###   ########.fr       */
+/*   Updated: 2019/01/07 12:30:56 by flbartol         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,8 +46,7 @@ int				solver(t_etris tetris[27], t_map *map)
 			move_down(map);
 		if (tetris[*t].width > map->size_map - map->current_xy[0])
 		{
-			*t -= 1;
-			delete_tetris(&tetris[*t], map, *t);
+			delete_tetris(&tetris[--*t], map, *t);
 			map->current_xy[0] = map->position_piece[*t][0];
 			map->current_xy[1] = map->position_piece[*t][1] + 1;
 			if (*t == 0
