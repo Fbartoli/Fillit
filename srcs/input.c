@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   input.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ftrujill <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: flbartol <flbartol@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/21 11:07:38 by ftrujill          #+#    #+#             */
-/*   Updated: 2019/01/05 18:36:28 by ftrujill         ###   ########.fr       */
+/*   Updated: 2019/01/12 16:26:23 by flbartol         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ int			input_to_tetris(int fd, t_etris tetris[27])
 	char	buff[5];
 
 	i = 0;
-	while (i != -1)
+	while (i < 26)
 	{
 		j = 0;
 		while (j < 4)
