@@ -6,7 +6,7 @@
 /*   By: flbartol <flbartol@42.student.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/21 11:08:14 by ftrujill          #+#    #+#             */
-/*   Updated: 2019/01/07 12:52:38 by flbartol         ###   ########.fr       */
+/*   Updated: 2019/01/13 18:40:51 by flbartol         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,12 +38,10 @@ typedef struct	s_map
 	int			nb_piece_placed;
 	int			position_piece[26][2];
 	int			size_map;
-	char		map_final[16][16];
 }				t_map;
 
 int				print_error(void);
 int				print_usage(void);
-void			print_tetris(t_etris tetris[27]);
 int				input_to_tetris(int fd, t_etris tetris[27]);
 int				check_tetris(t_etris tetris[27]);
 int				init_map(t_map *map);

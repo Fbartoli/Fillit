@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: flbartol <flbartol@student.42.fr>          +#+  +:+       +#+         #
+#    By: flbartol <flbartol@42.student.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/12/27 12:56:28 by flbartol          #+#    #+#              #
-#    Updated: 2019/01/05 20:21:26 by flbartol         ###   ########.fr        #
+#    Updated: 2019/01/13 18:39:26 by flbartol         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -33,7 +33,7 @@ OBJ_NAME = $(SRC_NAME:.c=.o)
 
 INC_NAME = fillit.h
 
-SRC_NAME = aux.c check_tab.c display.c input.c main.c map.c recursive.c utils.c
+SRC_NAME = aux.c check_tab.c display.c input.c main.c map.c solver.c utils.c
 
 all: $(NAME)
 
