@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: ftrujill <marvin@42.fr>                    +#+  +:+       +#+         #
+#    By: flbartol <flbartol@42.student.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/07/17 19:36:27 by ftrujill          #+#    #+#              #
-#    Updated: 2018/12/27 13:36:59 by ftrujill         ###   ########.fr        #
+#    Updated: 2019/01/19 02:14:24 by flbartol         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -97,13 +97,13 @@ OBJ =			$(SRC:.c=.o)
 all: 			$(NAME) $(SRC)
 
 $(NAME):		$(OBJ)
-				ar rc libft.a $(OBJ)
-				ranlib libft.a
+				@ar rc libft.a $(OBJ)
+				@ranlib libft.a
 
-clean: 
-				rm -f $(OBJ)
+clean:
+				@rm -f $(OBJ)
 
 fclean: 		clean
-				rm -f $(NAME)
+				@rm -f $(NAME)
 
 re:				fclean all
