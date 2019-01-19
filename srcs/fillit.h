@@ -6,7 +6,7 @@
 /*   By: flbartol <flbartol@42.student.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/21 11:08:14 by ftrujill          #+#    #+#             */
-/*   Updated: 2019/01/13 18:40:51 by flbartol         ###   ########.fr       */
+/*   Updated: 2019/01/19 02:00:04 by flbartol         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,6 @@
 # include <fcntl.h>
 # include <sys/types.h>
 # include <sys/uio.h>
-# include <unistd.h>
 # include <unistd.h>
 # include <stdlib.h>
 # include "../libft/libft.h"
