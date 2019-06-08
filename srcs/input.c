@@ -6,7 +6,7 @@
 /*   By: flbartol <flbartol@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/21 11:07:38 by ftrujill          #+#    #+#             */
-/*   Updated: 2019/01/12 16:26:23 by flbartol         ###   ########.fr       */
+/*   Updated: 2019/01/19 14:20:39 by flbartol         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ int			input_to_tetris(int fd, t_etris tetris[27])
 			ft_memset(tetris[i].piece, 0, 5);
 			return (1);
 		}
-		if (buff[0] != '\n')
+		if (buff[0] != '\n' || i == 26)
 			return (-1);
 	}
 	return (1);

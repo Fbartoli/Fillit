@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: flbartol <flbartol@42.student.fr>          +#+  +:+       +#+         #
+#    By: flbartol <flbartol@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/07/17 19:36:27 by ftrujill          #+#    #+#              #
-#    Updated: 2019/01/19 02:14:24 by flbartol         ###   ########.fr        #
+#    Updated: 2019/01/19 15:45:55 by flbartol         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -92,18 +92,23 @@ ft_strtrim.c\
 ft_tolower.c\
 ft_toupper.c\
 
-OBJ =			$(SRC:.c=.o)
+OBJ = $(SRC:.c=.o)
 
-all: 			$(NAME) $(SRC)
+all: $(NAME) $(SRC)
 
-$(NAME):		$(OBJ)
-				@ar rc libft.a $(OBJ)
-				@ranlib libft.a
+$(NAME): $(OBJ)
+	@ar rc $(NAME) $(OBJ)
+	@ranlib libft.a
+
+%.o: %.c
+	@cc $(CFLAGS) -o $@ -c $<
 
 clean:
-				@rm -f $(OBJ)
+	@rm -rf $(OBJ)
 
-fclean: 		clean
-				@rm -f $(NAME)
+fclean: clean
+	@rm -rf $(NAME)
 
-re:				fclean all
+re: fclean all
+
+.PHONY: clean fclean re all
